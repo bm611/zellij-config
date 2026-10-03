@@ -1,0 +1,37 @@
+layout {
+ default_tab_template {
+  children
+  pane size=1 borderless=true {
+plugin location="file:__HOME__/.config/zellij/plugins/zjstatus.wasm" {
+    format_left "#[fg=bright_black,bg=default] {session}  {tabs}"
+    format_right "{mode} {command_cwd} "
+    command_cwd_command "/bin/sh __HOME__/.config/zellij/scripts/status-cwd.sh"
+    command_cwd_format "#[fg=cyan,bg=default]{stdout}"
+    command_cwd_interval "1"
+    command_cwd_rendermode "static"
+    command_cwd_cwd "{focused_pane_cwd}"
+    format_space "#[bg=default]"
+    border_enabled "false"
+    hide_frame_for_single_pane "false"
+    tab_normal "#[fg=bright_black,bg=default]#[fg=bright_black,bg=default,reverse] {index} {name}{fullscreen_indicator}{sync_indicator} #[fg=bright_black,bg=default]"
+    tab_active "#[fg=magenta,bg=default]#[fg=magenta,bg=default,reverse,bold] {index} {name}{fullscreen_indicator}{sync_indicator} #[fg=magenta,bg=default]"
+    tab_separator "#[bg=default] "
+    tab_fullscreen_indicator " +"
+    tab_sync_indicator " ↔"
+    mode_normal ""
+    mode_locked "#[fg=bright_black,bg=default] LOCKED"
+    mode_pane "#[fg=cyan,bg=default] PANE"
+    mode_tab "#[fg=cyan,bg=default] TAB"
+    mode_resize "#[fg=yellow,bg=default] RESIZE"
+    mode_move "#[fg=yellow,bg=default] MOVE"
+    mode_scroll "#[fg=yellow,bg=default] SCROLL"
+    mode_search "#[fg=yellow,bg=default] SEARCH"
+    mode_enter_search "#[fg=yellow,bg=default] SEARCH"
+    mode_session "#[fg=cyan,bg=default] SESSION"
+    mode_rename_tab "#[fg=magenta,bg=default] RENAME"
+    mode_rename_pane "#[fg=magenta,bg=default] RENAME"
+    mode_tmux "#[fg=cyan,bg=default] TMUX"
+}
+  }
+ }
+}

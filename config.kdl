@@ -310,7 +310,7 @@ simplified_ui true
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "dracula"
+theme "dracula-pills"
  
 // Theme to use when the host terminal reports a dark color palette.
 // Requires `theme_light` to also be set; otherwise `theme` is used.
@@ -371,7 +371,7 @@ default_layout "pills"
 //   - true (default, enabled)
 //   - false
 // 
-pane_frames true
+pane_frames false
  
 // Set the pane frame style when pane_frames is enabled
 // Options:
@@ -668,5 +668,6 @@ show_startup_tips false
 ui {
     pane_frames {
         rounded_corners true
+        hide_session_name true
     }
 }
